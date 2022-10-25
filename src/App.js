@@ -5,11 +5,17 @@ import { Quote } from "./Components/Quote/Quote";
 import { Todo } from "./Components/Todo/Todo";
 import { TodoTab } from "./Components/TodoTab/TodoTab";
 
+//styles
+import "./App.css";
+import { ReactComponent as AppLogo } from "./Assets/Icons/AppLogo.svg";
+
 function App() {
   return (
     <React.Fragment>
       <header className="app-header">
-        <h1 className="app-header__title">Todo App</h1>
+        <h1 className="app-header__title">
+          Todo App <AppLogo className="app-header-logo" />
+        </h1>
         <Quote></Quote>
       </header>
       <main className="todos-section">
@@ -18,15 +24,16 @@ function App() {
         </p>
         <section className="todos-section__main">
           <div className="todos-section__main__tabs-container">
-            <TodoTab categoryName="All" amount={0} />
-            <TodoTab categoryName="Pending" amount={0} />
-            <TodoTab categoryName="Done" amount={0} />
+            <TodoTab id="tab-all" categoryName="All" amount={0} />
+            <TodoTab id="tab-pending" categoryName="Pending" amount={0} />
+            <TodoTab id="tab-done" categoryName="Done" amount={0} />
           </div>
           <div className="todos-container">
-            <Todo todoText={"hola"}></Todo>
+            <Todo id={1} completed todoText={"hacer los diseños"}></Todo>
+            <Todo id={2} todoText={"implementar la app"}></Todo>
           </div>
         </section>
-        <button className="create-todo"></button>
+        <button className="create-todo-btn">+</button>
       </main>
     </React.Fragment>
   );

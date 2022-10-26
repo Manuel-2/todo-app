@@ -5,15 +5,22 @@ import { Quote } from "./Components/Quote/Quote";
 import { Todo } from "./Components/Todo/Todo";
 import { TodoTab } from "./Components/TodoTab/TodoTab";
 import { Modal } from "./Components/Modal/Modal";
+import { GlobalContextProvider } from "./Components/GlobalContext/GlobalContext";
+import { TodoForm } from "./Components/TodoForm/TodoForm";
 
 //styles
 import "./App.css";
 import { ReactComponent as AppLogo } from "./Assets/Icons/AppLogo.svg";
-import { TodoForm } from "./Components/TodoForm/TodoForm";
 
 function App() {
+  const [modalIsVisible, setModalVisible] = React.useState(false);
+
+  const toggleModalVisibility = (event) => {
+    setModalVisible(!modalIsVisible);
+  };
+
   return (
-    <React.Fragment>
+    <GlobalContextProvider value={{ modalIsVisible, setModalVisible }}>
       <header className="app-header">
         <h1 className="app-header__title">
           Todo App <AppLogo className="app-header-logo" />
@@ -35,12 +42,14 @@ function App() {
             <Todo id={2} todoText={"implementar la app"}></Todo>
           </div>
         </section>
-        <button className="create-todo-btn">+</button>
+        <button onClick={toggleModalVisibility} className="create-todo-btn">
+          +
+        </button>
       </main>
       <Modal containerId="modal">
         <TodoForm placeholder="insert text here" />
       </Modal>
-    </React.Fragment>
+    </GlobalContextProvider>
   );
 }
 

@@ -4,14 +4,15 @@ import { globalContext } from "../GlobalContext/GlobalContext";
 import { loadStateEnum } from "../../Utils/useLocalStorage/useLocalStorage";
 
 import { Todo } from "../Todo/Todo";
+import { TodoLoadingSkeleton } from "../TodoLoadingSkeleton/TodoLoadingSkeleton";
 
 function TodosContainer(props) {
   const { todos, loadState } = React.useContext(globalContext);
 
   let elementsToRender = [];
   if (loadState === loadStateEnum.loading) {
-    for (let i = 0; i < 3; i++) {
-      elementsToRender.push(<h2 key={i}>cargando..</h2>);
+    for (let i = 0; i < 5; i++) {
+      elementsToRender.push(<TodoLoadingSkeleton key={i} />);
     }
   }
   if (loadState === loadStateEnum.complete) {

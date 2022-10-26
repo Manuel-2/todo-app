@@ -11,20 +11,22 @@ function useLocalStorage(itemKey, defaultValue) {
   const [loadState, setLoadState] = React.useState(loadStateEnum.loading);
 
   // simulating delay
-  setTimeout(() => {
-    try {
-      let itemValue = localStorage.getItem(itemKey);
-      if (itemValue == null) {
-        itemValue = defaultValue;
+  React.useEffect(() => {
+    setTimeout(() => {
+      try {
+        let itemValue = JSON.parse(localStorage.getItem(itemKey));
+        if (itemValue == null) {
+          itemValue = defaultValue;
+        }
+        setItem(itemValue);
+        setLoadState(loadStateEnum.complete);
+      } catch (error) {
+        setLoadState(loadStateEnum.error);
       }
-      setItem(itemValue);
-      setLoadState(loadStateEnum.complete);
-    } catch (error) {
-      setLoadState(loadStateEnum.error);
-    }
-  }, 2000);
+    }, 2000);
+  }, []);
 
   return { item, setItem, loadState };
 }
 
-export { useLocalStorage };
+export { useLocalStorage, loadStateEnum };

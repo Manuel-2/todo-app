@@ -2,11 +2,12 @@ import React from "react";
 
 // components
 import { Quote } from "./Components/Quote/Quote";
-import { Todo } from "./Components/Todo/Todo";
+
 import { TodoTab } from "./Components/TodoTab/TodoTab";
 import { Modal } from "./Components/Modal/Modal";
 import { TodoForm } from "./Components/TodoForm/TodoForm";
 import { CreateTodoButton } from "./Components/CreateTodoButton/CreateTodoButton";
+import { TodosContainer } from "./Components/TodosContainer/TodosContainer";
 
 //styles
 import "./App.css";
@@ -31,10 +32,7 @@ function AppUi(props) {
             <TodoTab id="tab-pending" categoryName="Pending" amount={0} />
             <TodoTab id="tab-done" categoryName="Done" amount={0} />
           </div>
-          <div className="todos-container">
-            <Todo id={1} completed todoText={"hacer los diseños"}></Todo>
-            <Todo id={2} todoText={"implementar la app"}></Todo>
-          </div>
+          <TodosContainer />
         </section>
         <CreateTodoButton></CreateTodoButton>
       </main>

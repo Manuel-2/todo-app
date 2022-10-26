@@ -9,7 +9,7 @@ function App() {
   const {
     item: todos,
     setItem: setTodos,
-    loadingState,
+    loadState,
   } = useLocalStorage("todos_01", []);
 
   return (
@@ -19,7 +19,7 @@ function App() {
         setModalVisible,
         todos,
         setTodos,
-        loadingState,
+        loadState,
       }}
     >
       <AppUi />

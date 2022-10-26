@@ -2,18 +2,20 @@ import React from "react";
 
 // components
 import { Quote } from "./Components/Quote/Quote";
-
 import { TodoTab } from "./Components/TodoTab/TodoTab";
 import { Modal } from "./Components/Modal/Modal";
 import { TodoForm } from "./Components/TodoForm/TodoForm";
 import { CreateTodoButton } from "./Components/CreateTodoButton/CreateTodoButton";
 import { TodosContainer } from "./Components/TodosContainer/TodosContainer";
+import { globalContext } from "./Components/GlobalContext/GlobalContext";
 
 //styles
 import "./App.css";
 import { ReactComponent as AppLogo } from "./Assets/Icons/AppLogo.svg";
 
 function AppUi(props) {
+  const { completedTodos, totalTodos } = React.useContext(globalContext);
+
   return (
     <React.Fragment>
       <header className="app-header">
@@ -24,7 +26,7 @@ function AppUi(props) {
       </header>
       <main className="todos-section">
         <p className="todos-section__stats">
-          You have completed {0} of {0} todos
+          You have completed {completedTodos} of {totalTodos} todos
         </p>
         <section className="todos-section__main">
           <div className="todos-section__main__tabs-container">

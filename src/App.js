@@ -11,6 +11,8 @@ function App() {
     setItem: setTodos,
     loadState,
   } = useLocalStorage("todos_01", []);
+  const completedTodos = todos.filter((todo) => todo.completed).length;
+  const totalTodos = todos.length;
 
   return (
     <GlobalContextProvider
@@ -19,6 +21,8 @@ function App() {
         setModalVisible,
         todos,
         setTodos,
+        totalTodos,
+        completedTodos,
         loadState,
       }}
     >

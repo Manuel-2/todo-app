@@ -11,7 +11,7 @@ function TodosContainer(props) {
 
   let elementsToRender = [];
   if (loadState === loadStateEnum.loading) {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       elementsToRender.push(<TodoLoadingSkeleton key={i} />);
     }
   }

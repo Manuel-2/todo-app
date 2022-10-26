@@ -4,10 +4,12 @@ import React from "react";
 import { Quote } from "./Components/Quote/Quote";
 import { Todo } from "./Components/Todo/Todo";
 import { TodoTab } from "./Components/TodoTab/TodoTab";
+import { Modal } from "./Components/Modal/Modal";
 
 //styles
 import "./App.css";
 import { ReactComponent as AppLogo } from "./Assets/Icons/AppLogo.svg";
+import { TodoForm } from "./Components/TodoForm/TodoForm";
 
 function App() {
   return (
@@ -35,6 +37,9 @@ function App() {
         </section>
         <button className="create-todo-btn">+</button>
       </main>
+      <Modal containerId="modal">
+        <TodoForm placeholder="insert text here" />
+      </Modal>
     </React.Fragment>
   );
 }

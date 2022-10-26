@@ -138,7 +138,7 @@ html {
     background-color: var(--white);
     border-radius: 10px;
 
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .todo-item.checked {
@@ -194,4 +194,72 @@ html {
     color: var(--green);
     font-size: 50px;
     cursor: pointer;
+}
+
+#modal {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+
+.modal-content {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content.hide {
+    display: none;
+}
+
+.create-todo-form {
+    background-color: var(--secondary-white);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 172px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 40px;
+}
+
+.create-todo-form__input {
+    width: 100%;
+    height: 53px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.create-todo-form__buttons-container {
+    width: 100%;
+    height: 51px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.create-todo-form-btn {
+    width: 145px;
+    border-radius: 15px;
+    border: none;
+    font-size: var(--tabs-text);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.create-todo-form__cancel-btn {
+    background-color: var(--white);
+    border: solid 2px var(--red);
+    color: var(--red);
+
+}
+
+.create-todo-form__sumbit-btn {
+    background-color: var(--green);
+    color: white;
+    font-weight: 600;
 }

@@ -2,11 +2,12 @@ import React from "react";
 
 // components
 import { Quote } from "./Components/Quote/Quote";
+import { SearchBar } from "./Components/ShearchBar/SearchBar";
 import { TodoTab } from "./Components/TodoTab/TodoTab";
+import { TodosContainer } from "./Components/TodosContainer/TodosContainer";
+import { CreateTodoButton } from "./Components/CreateTodoButton/CreateTodoButton";
 import { Modal } from "./Components/Modal/Modal";
 import { TodoForm } from "./Components/TodoForm/TodoForm";
-import { CreateTodoButton } from "./Components/CreateTodoButton/CreateTodoButton";
-import { TodosContainer } from "./Components/TodosContainer/TodosContainer";
 import { globalContext } from "./Components/GlobalContext/GlobalContext";
 
 //styles
@@ -28,6 +29,7 @@ function AppUi(props) {
         <p className="todos-section__stats">
           You have completed {completedTodos} of {totalTodos} todos
         </p>
+        <SearchBar placeholder="find todos" />
         <section className="todos-section__main">
           <div className="todos-section__main__tabs-container">
             <TodoTab id="tab-all" categoryName="All" amount={0} />

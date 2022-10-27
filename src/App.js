@@ -13,6 +13,7 @@ function App() {
   } = useLocalStorage("todos_01", []);
   const completedTodos = todos.filter((todo) => todo.completed).length;
   const totalTodos = todos.length;
+  const [searchValue, setSearchValue] = React.useState("");
 
   return (
     <GlobalContextProvider
@@ -24,6 +25,8 @@ function App() {
         totalTodos,
         completedTodos,
         loadState,
+        searchValue,
+        setSearchValue
       }}
     >
       <AppUi />

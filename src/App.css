@@ -140,11 +140,13 @@ html {
 .todo-tap__counter {
     width: 17px;
     height: 17px;
-    text-align: center;
     font-size: var(--primary-text);
     background-color: var(--white);
     border-radius: 50%;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #tab-pending>.todo-tap__counter {

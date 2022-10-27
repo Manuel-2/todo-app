@@ -16,6 +16,7 @@ import { ReactComponent as AppLogo } from "./Assets/Icons/AppLogo.svg";
 
 function AppUi(props) {
   const { completedTodos, totalTodos } = React.useContext(globalContext);
+  const pendingTodos = totalTodos - completedTodos;
 
   return (
     <React.Fragment>
@@ -32,9 +33,17 @@ function AppUi(props) {
         <SearchBar placeholder="find todos" />
         <section className="todos-section__main">
           <div className="todos-section__main__tabs-container">
-            <TodoTab id="tab-all" categoryName="All" amount={0} />
-            <TodoTab id="tab-pending" categoryName="Pending" amount={0} />
-            <TodoTab id="tab-done" categoryName="Done" amount={0} />
+            <TodoTab id="tab-all" categoryName="All" amount={totalTodos} />
+            <TodoTab
+              id="tab-pending"
+              categoryName="Pending"
+              amount={pendingTodos}
+            />
+            <TodoTab
+              id="tab-done"
+              categoryName="Done"
+              amount={completedTodos}
+            />
           </div>
           <TodosContainer />
         </section>

@@ -2,11 +2,13 @@ import React from "react";
 import { globalContext } from "../GlobalContext/GlobalContext";
 
 function TodoForm(props) {
-  const { setModalVisible, todos, setTodos } = React.useContext(globalContext);
+  const { setModalVisible, todos, setTodos, setAlert } =
+    React.useContext(globalContext);
 
   const cancelTodo = (event) => {
     document.getElementById("todo-text-input").value = "";
     setModalVisible(false);
+    setAlert({ visible: false });
   };
 
   const createTodo = (event) => {
@@ -14,6 +16,10 @@ function TodoForm(props) {
     const todoTextValue = document.getElementById("todo-text-input").value;
     if (todoTextValue.length === 0) {
       // Todo: show a warn to the user
+      setAlert({
+        message: "You can't create an empty todo",
+        visible: true,
+      });
       return;
     }
     const newTodo = {

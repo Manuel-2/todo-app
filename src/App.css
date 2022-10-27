@@ -129,7 +129,7 @@ html {
     transition: width 0.2s;
 }
 
-.todo-tab.selected{
+.todo-tab.selected {
     width: 125px;
 }
 
@@ -310,4 +310,54 @@ html {
 .button:active {
     transform: scale(0.9);
     box-shadow: 0px 0px 5px #FFFFFF;
+}
+
+/* notifications */
+
+.notifications-area {
+    width: 100vw;
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.alert-container {
+    background-color: var(--red);
+    width: 273px;
+    height: 61px;
+    border-radius: 10px;
+    position: relative;
+    margin: 0 auto;
+    top: -300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: top 1s cubic-bezier(.33, 1.38, .13, .95);
+}
+
+.alert-container.visible {
+    top: 48px;
+}
+
+.alert-container__text {
+    width: 100%;
+    color: white;
+    font-size: var(--tabs-text);
+    font-weight: 400;
+    text-align: center;
+}
+
+.alert-container__close-btn {
+    position: absolute;
+    top: 66px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--red);
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -15,6 +15,10 @@ function App() {
   const totalTodos = todos.length;
   const [searchValue, setSearchValue] = React.useState("");
   const [currentTab, setTab] = React.useState("tab-all");
+  const [alert, setAlert] = React.useState({
+    message: "",
+    visible: false,
+  });
 
   return (
     <GlobalContextProvider
@@ -30,6 +34,8 @@ function App() {
         setSearchValue,
         currentTab,
         setTab,
+        alert,
+        setAlert,
       }}
     >
       <AppUi />

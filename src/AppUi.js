@@ -9,6 +9,8 @@ import { CreateTodoButton } from "./Components/CreateTodoButton/CreateTodoButton
 import { Modal } from "./Components/Modal/Modal";
 import { TodoForm } from "./Components/TodoForm/TodoForm";
 import { globalContext } from "./Components/GlobalContext/GlobalContext";
+import { NotificationsContainer } from "./Components/NotificationsContainer/Notifications";
+import { AlertMessage } from "./Components/AlertMessage/AlertMessage";
 
 //styles
 import "./App.css";
@@ -20,6 +22,9 @@ function AppUi(props) {
 
   return (
     <React.Fragment>
+      <NotificationsContainer containerId="notifications">
+        <AlertMessage></AlertMessage>
+      </NotificationsContainer>
       <header className="app-header">
         <h1 className="app-header__title">
           Todo App <AppLogo className="app-header-logo" />

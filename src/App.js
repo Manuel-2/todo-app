@@ -14,6 +14,7 @@ function App() {
   const completedTodos = todos.filter((todo) => todo.completed).length;
   const totalTodos = todos.length;
   const [searchValue, setSearchValue] = React.useState("");
+  const [currentTab, setTab] = React.useState("tab-all");
 
   return (
     <GlobalContextProvider
@@ -26,7 +27,9 @@ function App() {
         completedTodos,
         loadState,
         searchValue,
-        setSearchValue
+        setSearchValue,
+        currentTab,
+        setTab,
       }}
     >
       <AppUi />

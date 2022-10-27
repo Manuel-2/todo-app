@@ -120,10 +120,17 @@ html {
 .todo-tab {
     width: 80px;
     padding: 3px 0;
+    border: none;
     border-bottom: solid 2px var(--dark);
     display: flex;
     justify-content: space-between;
     cursor: pointer;
+    background: none;
+    transition: width 0.2s;
+}
+
+.todo-tab.selected{
+    width: 125px;
 }
 
 .todo-tap__text {

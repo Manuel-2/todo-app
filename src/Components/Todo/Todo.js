@@ -13,6 +13,7 @@ function Todo(props) {
     const currentTodo = todosCopy.find((todo) => todo.id === todoId);
     currentTodo.completed = !currentTodo.completed;
     setTodos(todosCopy);
+    localStorage.setItem("todos_01", JSON.stringify(todosCopy));
   };
 
   const deleteTodo = (event) => {
@@ -22,6 +23,7 @@ function Todo(props) {
     const todosCopy = todos.filter((todo) => todo.id !== todoId);
     console.log(todosCopy);
     setTodos(todosCopy);
+    localStorage.setItem("todos_01", JSON.stringify(todosCopy));
   };
 
   let todoClasses = "todo-item";

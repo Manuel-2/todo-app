@@ -148,6 +148,8 @@ html {
 
 .todo-item__text {
     text-align: center;
+    max-width: 220px;
+    overflow-wrap: break-word;
 }
 
 .todo-item__check-btn {

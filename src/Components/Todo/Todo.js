@@ -21,7 +21,6 @@ function Todo(props) {
       event.currentTarget.parentElement.getAttribute("data-todo-id")
     );
     const todosCopy = todos.filter((todo) => todo.id !== todoId);
-    console.log(todosCopy);
     setTodos(todosCopy);
     localStorage.setItem("todos_01", JSON.stringify(todosCopy));
   };

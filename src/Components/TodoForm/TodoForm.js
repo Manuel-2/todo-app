@@ -38,13 +38,13 @@ function TodoForm(props) {
       ></input>
       <div className="create-todo-form__buttons-container">
         <input
-          className="create-todo-form__cancel-btn create-todo-form-btn"
+          className="create-todo-form__cancel-btn create-todo-form-btn button"
           type={"button"}
           value="Cancel"
           onClick={cancelTodo}
         ></input>
         <input
-          className="create-todo-form__sumbit-btn create-todo-form-btn"
+          className="create-todo-form__sumbit-btn create-todo-form-btn button"
           type={"submit"}
           value="Create"
           onClick={createTodo}

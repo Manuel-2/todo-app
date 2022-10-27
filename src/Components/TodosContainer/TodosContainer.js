@@ -7,7 +7,7 @@ import { Todo } from "../Todo/Todo";
 import { TodoLoadingSkeleton } from "../TodoLoadingSkeleton/TodoLoadingSkeleton";
 
 function TodosContainer(props) {
-  const { todos, loadState } = React.useContext(globalContext);
+  const { todos, loadState, searchValue } = React.useContext(globalContext);
 
   let elementsToRender = [];
   if (loadState === loadStateEnum.loading) {
@@ -26,6 +26,14 @@ function TodosContainer(props) {
         ></Todo>
       );
     });
+    if (searchValue.length > 0) {
+      const filterList = elementsToRender.filter((todo) => {
+        const todoText = todo.props.todoText.toLowerCase();
+        const todoSearchValue = searchValue.toLowerCase();
+        return todoText.includes(todoSearchValue);
+      });
+      elementsToRender = filterList;
+    }
   }
 
   return <div className="todos-container">{elementsToRender}</div>;

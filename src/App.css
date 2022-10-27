@@ -8,6 +8,7 @@ html {
     --green: #7FDE88;
     --red: #F15F5F;
     --dark: #202020;
+    --secondary-dark: #747474;
     --white: #ffffff;
     --secondary-white: #F5F5F5;
 
@@ -80,6 +81,36 @@ html {
     width: 100%;
 }
 
+/* search bar*/
+.search-bar {
+    background-color: var(--white);
+    width: 100%;
+    height: 35px;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 21px;
+}
+
+.search-bar__icon {
+    position: absolute;
+    left: 9px;
+    top: 6px;
+}
+
+.search-bar__text-input {
+    border: none;
+    width: 80%;
+    text-align: center;
+}
+
+.search-bar__text-input:focus-visible {
+    outline: none;
+}
+
+
+
 /* tabs */
 .todos-section__main__tabs-container {
     display: flex;
@@ -122,7 +153,7 @@ html {
     margin-top: 40px;
     overflow-y: scroll;
     width: 100%;
-    max-height: 450px;
+    max-height: 395px;
 }
 
 .todo-item {
@@ -261,4 +292,13 @@ html {
     background-color: var(--green);
     color: white;
     font-weight: 600;
+}
+
+.button {
+    transition: transform 0.2s;
+}
+
+.button:active {
+    transform: scale(0.9);
+    box-shadow: 0px 0px 5px #FFFFFF;
 }

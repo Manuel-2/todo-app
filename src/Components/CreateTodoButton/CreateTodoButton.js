@@ -9,7 +9,7 @@ function CreateTodoButton(props) {
   };
 
   return (
-    <button onClick={toggleModalVisibility} className="create-todo-btn">
+    <button onClick={toggleModalVisibility} className="create-todo-btn button">
       +
     </button>
   );

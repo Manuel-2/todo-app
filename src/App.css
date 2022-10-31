@@ -58,6 +58,18 @@ html {
     padding: 3px 12px;
     border-left: solid 5px var(--dark);
     font-size: var(--primary-text);
+    overflow-x: hidden;
+}
+
+.quote__values-container{
+    position: relative;
+    left: 0;
+    transition: left 2s ease-out;
+    max-width: 285px;
+}
+
+.quote__values-container--hide{
+    left: -285px;
 }
 
 .todos-section {
